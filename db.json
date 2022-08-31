@@ -1,0 +1,66 @@
+{
+  "productList": [
+    {
+      "productName": "k",
+      "productCategory": "p2",
+      "productPrice": 2,
+      "productFreshness": "second Hand",
+      "productComment": "kk",
+      "productDate": "2022-08-07T22:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "k2",
+      "productCategory": "p1",
+      "productPrice": 2,
+      "productFreshness": "Refurbished",
+      "productComment": "22",
+      "productDate": "2022-08-07T22:00:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "k3",
+      "productCategory": "p1",
+      "productPrice": 1,
+      "productFreshness": "new",
+      "productComment": "333",
+      "productDate": "2022-08-07T22:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "k4",
+      "productCategory": "p3",
+      "productPrice": 2,
+      "productFreshness": "second Hand",
+      "productComment": "ddd",
+      "productDate": "2022-08-15T22:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "k9",
+      "productCategory": "p2",
+      "productPrice": 8,
+      "productFreshness": "second Hand",
+      "productComment": "ghj",
+      "productDate": "2022-08-15T22:00:00.000Z",
+      "id": 5
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Product Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>product name</mat-label>
+            <input formControlName="productName" matInput placeholder="productName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>product Category</mat-label>
+            <mat-select formControlName="productCategory" placeholder="productCategory">
+                <mat-option value="p1">p1</mat-option>
+                <mat-option value="p2">p2</mat-option>
+                <mat-option value="p3">p3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="productDate" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <label for=""><h1>Product Freshness</h1> </label>
+        <mat-radio-group formControlName="productFreshness" class="example-radio-button" name="productFreshness">
+            <mat-radio-button *ngFor="let freshness of freshnessList" [value]="freshness"> {{freshness}}</mat-radio-button> 
+        </mat-radio-group>
+
+        <mat-form-field>
+            <mat-label>Price</mat-label>
+            <input formControlName="productPrice" matInput type="number" placeholder="productPrice"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>comment</mat-label>
+            <textarea formControlName="productComment" matInput> </textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" style="margin-left:'10px'">Close</button>
+    <button mat-raised-button color="primary" style="margin-left:'10px'" (click)="addProduct()">Save</button>
+</div>
