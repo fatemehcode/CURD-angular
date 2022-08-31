@@ -75,7 +75,9 @@ export class DialogComponent implements OnInit {
         },
       });
     }
-    
+  closeForm() {
+    this.dialogRef.close('close');
+    }
   }
 
 

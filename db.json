@@ -116,6 +116,15 @@
       "productComment": "fghfgh",
       "productDate": "2022-07-31T22:00:00.000Z",
       "id": 15
+    },
+    {
+      "productName": "erte",
+      "productCategory": "p1",
+      "productPrice": 2,
+      "productFreshness": "new",
+      "productComment": "ert",
+      "productDate": "2022-08-08T22:00:00.000Z",
+      "id": 16
     }
   ],
   "posts": [
