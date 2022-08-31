@@ -44,6 +44,24 @@
       "productComment": "ghj",
       "productDate": "2022-08-15T22:00:00.000Z",
       "id": 5
+    },
+    {
+      "productName": "k2",
+      "productCategory": "p2",
+      "productPrice": 1,
+      "productFreshness": "second Hand",
+      "productComment": "k",
+      "productDate": "2022-08-03T22:00:00.000Z",
+      "id": 6
+    },
+    {
+      "productName": "k2",
+      "productCategory": "p3",
+      "productPrice": 1,
+      "productFreshness": "second Hand",
+      "productComment": "pp",
+      "productDate": "2022-08-11T22:00:00.000Z",
+      "id": 7
     }
   ],
   "posts": [
