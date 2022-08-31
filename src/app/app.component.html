@@ -31,7 +31,7 @@
           </ng-container> 
         <ng-container matColumnDef="productPrice">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> productPrice </th>
-          <td mat-cell *matCellDef="let row"> {{row.productPrice}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.productPrice|currency}} </td>
           </ng-container> 
         <ng-container matColumnDef="productFreshness">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> productFreshness </th>
@@ -39,7 +39,7 @@
           </ng-container> 
         <ng-container matColumnDef="productDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> productDate </th>
-          <td mat-cell *matCellDef="let row"> {{formatedDate(row.productDate)}} </td>
+          <td mat-cell *matCellDef="let row"> {{(row.productDate|date)}} </td>
           </ng-container>      
         <ng-container matColumnDef="productComment">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> productComment </th>
