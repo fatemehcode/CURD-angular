@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from './dialog/dialog.component';
@@ -13,7 +13,7 @@ import { formatDate } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit  {
   title = 'CURD-angular';
   displayedColumns: string[] = [
     'id',
@@ -22,7 +22,10 @@ export class AppComponent implements OnInit {
     'productPrice',
     'productFreshness',
     'productDate',
-    'productComment'];
+    'productComment',
+    'action'
+  ];
+
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -31,24 +34,25 @@ export class AppComponent implements OnInit {
   constructor(private dialog: MatDialog,
     private api: ApiService,
     private router:Router) { }
+  
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    }
+  
   ngOnInit(): void {
-    this.getAllProducts();    
+       this.getAllProducts();   
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width:'30%',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    }).afterClosed().subscribe(val => {
+      if (val === 'save') { this.getAllProducts(); }
+    });   
   }
-  showProduct() {
-    console.log('hi');
-    
-
-  }
-  getAllProducts(){
+  
+  getAllProducts(): void{
       this.api.getProduct()
         .subscribe({
           next: (res) => {
@@ -69,9 +73,25 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }  
-  formatedDate(myDate:Date) {
-    const format = 'dd/MM/yyyy';
-    const locale = 'en-US';
-    return formatDate(myDate, format, locale);
+  
+  editProduct(row:any) {
+    this.dialog.open(DialogComponent,{
+      width: '30%',
+      data:row,
+    }).afterClosed().subscribe(val => {
+      if (val === 'update') { this.getAllProducts(); }
+    });  
   }
+
+  deleteProduct(row:any) {
+    this.api.deleteProduct(row.id).subscribe({
+        next: (res) => {
+        alert(' delete successfully!'); 
+        this.getAllProducts();
+        },
+        error: (res) => {
+          alert('delete problem!');         
+        },
+      });
+    }
 }
