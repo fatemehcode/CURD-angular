@@ -32,17 +32,12 @@ import {MatTableDataSource} from '@angular/material/table';
     DialogComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,   MatIconModule,
-    MatButtonModule,    MatDialogModule,
-    MatFormFieldModule, MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,MatNativeDateModule,
-    MatRadioModule, ReactiveFormsModule,
-    HttpClientModule,
-    MatPaginatorModule,MatTableModule
+    BrowserModule,AppRoutingModule,BrowserAnimationsModule,
+    MatToolbarModule,MatIconModule,MatButtonModule,MatDialogModule,
+    MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule,
+    MatNativeDateModule,MatRadioModule, ReactiveFormsModule, HttpClientModule,
+    MatPaginatorModule, MatTableModule,
+    
 
   ],
   providers: [],
